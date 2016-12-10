@@ -42,6 +42,7 @@ function quotePromise() {
                 }
             });
         }).on('error', (error) => {
+            // reject promise
             reject(`Got error ${error.message}`);
         });
     });
