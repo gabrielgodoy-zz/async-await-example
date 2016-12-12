@@ -5,7 +5,7 @@ function quotePromise () {
 	return new Promise((resolve, reject) => {
 		request(quotesAPI, (error, response, body) => {
 			if (!error && response.statusCode == 200) {
-				resolve(JSON.parse(body).quoteText);
+				resolve(JSON.parse(body).quoteText)
 			} else {
 				reject(error);
 			}
@@ -25,6 +25,7 @@ async function main () {
 	} catch (error) {
 		result = `Error: ${error}`;
 	}
+	// It logs only when await is finished
 	console.log(result);
 }
 main();
