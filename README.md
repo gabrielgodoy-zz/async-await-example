@@ -6,6 +6,8 @@ Using babel-cli, and those plugins below to run the example:
 - syntax-async-functions
 - transform-regenerator
 
+**Async function always returns a Promise**
+
 Async function can contain an `await` expression, that pauses the execution of the async function and waits for the passed promise's resolution, and resumes the async function's execution and returns the resolved value.
 
 ```js
@@ -26,9 +28,9 @@ async function main() {
     } catch (error) {
         result = `Error: ${error}`;
     }
-    console.log(result);
+    return result;
 }
 
 // Run async function
-main();
+main().then((result) => { console.log(result)} );
 ```
